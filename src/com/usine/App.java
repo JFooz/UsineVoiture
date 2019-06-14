@@ -23,6 +23,7 @@ public class App {
 		Moto moto1 = new Moto("Yamaha", "Rouge", 15000);
 		moto1.rouler(50);
 		System.out.println(moto1.getCouleur());
+		moto1.wheeling();
 	}
 
 
