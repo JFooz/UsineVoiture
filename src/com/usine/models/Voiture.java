@@ -5,41 +5,24 @@ package com.usine.models;
  * @author utilisateur5
  *
  */
-public class Voiture {
+public class Voiture extends Vehicule {
 
-	public String marque;
-	private String couleur;
-	private long kilometrage;
-	private long prix;
-	private String moteur;
-
-
+	//Liste constructeurs
 	public Voiture() {
-
-	}
-	/**
-	 *
-	 * @param marque String
-	 * @param couleur String
-	 * @param prix long
-	 * @param moteur String
-	 */
-	public Voiture(String marque, String couleur, long prix, String moteur) {
-
-		this.marque = marque;
-		this.couleur = couleur;
-		this.prix = prix;
-		this.moteur = moteur;
-		this.kilometrage = 5;
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public void rouler(int nombreKm) {
-
-		System.out.println(this.marque+ ": Je roule sur "+ nombreKm);
-		this.kilometrage += nombreKm;
+	public Voiture(String marque, String couleur, long prix) {
+		super(marque, couleur, prix);
+		// TODO Auto-generated constructor stub
 	}
 
-
+	@Override
+	public void rouler(int km) {
+		System.out.println(this.marque+" : je roule sur 4 roues pendant "+this.kilometrage+"km");
+		this.kilometrage += km;
+	}
 
 	@Override
 	public String toString() {
@@ -52,37 +35,10 @@ public class Voiture {
 		builder.append(this.kilometrage);
 		builder.append(", prix=");
 		builder.append(this.prix);
-		builder.append(", moteur=");
-		builder.append(this.moteur);
 		builder.append("]");
 		return builder.toString();
 	}
-	// Getters et Setters
-	public long getKilometrage() {
-		return this.kilometrage;
-	}
-	public String getMarque() {
-		return this.marque;
-	}
-	public void setMarque(String marque) {
-		this.marque = marque;
-	}
-	public String getCouleur() {
-		return this.couleur;
-	}
-	public void setCouleur(String couleur) {
-		this.couleur = couleur;
-	}
-	public long getPrix() {
-		return this.prix;
-	}
-	public void setPrix(long prix) {
-		this.prix = prix;
-	}
-	public String getMoteur() {
-		return this.moteur;
-	}
-	public void setMoteur(String moteur) {
-		this.moteur = moteur;
-	}
+
+
+
 }
